@@ -8,11 +8,11 @@ export default  function App() {
     <div className="App">
              <Router>
             <Routes>
-             <Route exact path='/' element={< BookList />}></Route>
-             <Route exact path='/search' element={< BookSearch />}></Route>
-             <Route exact path='/home' element={< Home />}></Route>
-              <Route path="/about" element={<About/>} />
-                 {/* <Route path='*'element ={<NotFound404/>} ></Route>	   */}
+            <Route exact path='/' element={< BookList />}></Route>
+            <Route exact path='/search' element={< BookSearch />}></Route>
+            <Route exact path='/home' element={< Home />}></Route>
+            <Route path="/about" element={<About/>} />
+            {/* <Route path='*'element ={<NotFound404/>} ></Route>	   */}
             </Routes>
         </Router>
        </div>
@@ -26,7 +26,6 @@ function Home() {
     </div>
   );
 }
-
 function About() {
   return (
     <div>
