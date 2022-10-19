@@ -2,7 +2,10 @@ import React from 'react';
 export const BookList = () => {
   return (
     <div className='list-books'>
-      <h2>all books here </h2>
+      <div className='list-books-title'>
+      <h1>MyReads</h1>
     </div>
+    </div>
+    
   );
 }
