@@ -1,8 +1,16 @@
 import React from 'react';
-export const BookShelf = () => {
+import { Book } from './Book';
+export const BookShelf = ({shelfTitle}) => {
     return (
-        <div className='list-books-content'>
-      <h1>book shelf content</h1>
+      <div className="bookshelf">
+      <h2 className="bookshelf-title">{shelfTitle}</h2>
+      <div className="bookshelf-books">
+        {/* <ol className="books-grid">
+        </ol> */}
+        <Book/>
+        <Book/>
+        <Book/>
+      </div>
     </div>
     );
 }
