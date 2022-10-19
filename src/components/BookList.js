@@ -1,8 +1,8 @@
 import React from 'react';
-export const BookList = () => { 
+export const BookList = () => {
   return (
-    <>
-      <h2>book list page</h2>
-    </>
+    <div className='list-books'>
+      <h2>all books here </h2>
+    </div>
   );
 }
