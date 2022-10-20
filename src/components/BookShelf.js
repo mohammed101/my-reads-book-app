@@ -7,7 +7,9 @@ export const BookShelf = ({shelfTitle,allBooks}) => {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {
-            allBooks.map( book=> 
+           allBooks
+           .filter(book => (book.shelf === shelfTitle))
+           .map( book=> 
               (
               <Book 
                key={book.id}
@@ -15,9 +17,6 @@ export const BookShelf = ({shelfTitle,allBooks}) => {
                />
               ))};
         </ol>
-        {/* <Book/>
-        <Book/>
-        <Book/> */}
       </div>
     </div>
     );
