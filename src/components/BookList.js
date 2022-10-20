@@ -2,7 +2,7 @@ import React from 'react';
 import { BookShelf } from './BookShelf';
 
 const bookShelfsTypes = ['currentlyReading;','wantToRead','read'];
-export const BookList = () => {
+export const BookList = ({allBooks}) => {
   return (
     <div className='list-books'>
       <div className='list-books-title'>
@@ -14,6 +14,7 @@ export const BookList = () => {
         <BookShelf
         key = {shlef}
           shelfTitle ={shlef}
+          allBooks = {allBooks}
         />
         ))}
     </div>
