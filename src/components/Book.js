@@ -2,7 +2,7 @@ import React from 'react';
 export const Book = ({ book }) => {
   return (
     <li>
-      <div className="book">
+      {/* <div className="book">
         <div className="book-top">
           <div
             className="book-cover"
@@ -16,6 +16,14 @@ export const Book = ({ book }) => {
         </div>
         <div className="book-title">To Kill a Mockingbird</div>
         <div className="book-authors">Harper Lee</div>
+      </div> */}
+      <div className="book">
+        <div className="book-top">
+
+        </div>
+        <div className="book-title">{book.title}</div>
+        <div className="book-title">{book.description}</div>
+        {/* <div className="book-authors">Harper Lee</div> */}
       </div>
     </li>
   );
