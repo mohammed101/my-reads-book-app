@@ -1,8 +1,8 @@
 import React from 'react';
 import { Book } from './Book';
-export const BookShelf = ({shelfTitle,allBooks}) => {
+export const BookShelf = ({key,shelfTitle,allBooks}) => {
     return (
-      <div className="bookshelf">
+      <div id={key} className="bookshelf">
       <h2 className="bookshelf-title">{shelfTitle}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
