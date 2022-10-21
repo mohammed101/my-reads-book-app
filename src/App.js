@@ -51,11 +51,11 @@ import './App.css';
                 }
              },[bookShelfedUpdated])
 
-        const updateBookShelfStatus = (book,updatedStatusOfBook) => {
+        const updateBookShelfStatus = (book,changeBookShelf) => {
 
           const booknow = {
             ...book,
-            shelf:updateBookShelfStatus
+            shelf:changeBookShelf
           }
           setBookShelfedUpdated(booknow);
           const newAllBooks = allBooks.filter(book => book.id != booknow.id);

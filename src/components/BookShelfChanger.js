@@ -2,14 +2,14 @@ import React from 'react';
 import { Book } from './Book';
 import {useState,useEffect} from 'react';
 
-export const BookShelfChanger = ({ book ,updateBookShelfStatus}) => {
+export const BookShelfChanger = ({ book,updateBookShelfStatus }) => {
 
   const [changeBookShelf, setChangeBookShelf] = useState('');
 
   useEffect( () => {
      // eslint-disable-next-line eqeqeq
      if(changeBookShelf != '');
-     setChangeBookShelf(book,changeBookShelf)
+     updateBookShelfStatus(book,changeBookShelf)
   },[changeBookShelf])
 
   const onSelectShlefChangeHandler = (updatedStatusOfBook) => {

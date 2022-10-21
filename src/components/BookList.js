@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookShelf } from './BookShelf';
+import {Link} from 'react-router-dom';
 
 const bookShelfsTypes = ['currentlyReading','wantToRead','read'];
 // const bookShelfsTypes = [
@@ -7,7 +8,7 @@ const bookShelfsTypes = ['currentlyReading','wantToRead','read'];
 //   { key: 'wantToRead', name: 'Want to Read' },
 //   { key: 'read', name: 'Have Read' },
 // ];
-export const BookList = ({allBooks}) => {
+export const BookList = ({allBooks,updateBookShelfStatus}) => {
   return (
     <div className='list-books'>
       <div className='list-books-title'>
@@ -21,8 +22,14 @@ export const BookList = ({allBooks}) => {
          key={shelf}
           shelfTitle ={shelf}
           allBooks = {allBooks}
+          updateBookShelfStatus ={updateBookShelfStatus}
         />
         ))}
+          <div className="open-search">
+            <Link to="/search">
+              Add New Book
+           </Link>
+          </div>
     </div>
     </div>
     </div>

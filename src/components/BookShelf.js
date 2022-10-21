@@ -1,6 +1,6 @@
 import React from 'react';
 import { Book } from './Book';
-export const BookShelf = ({key,shelfTitle,allBooks}) => {
+export const BookShelf = ({key,shelfTitle,allBooks,updateBookShelfStatus}) => {
     return (
       <div id={key} className="bookshelf">
       <h2 className="bookshelf-title ">{shelfTitle}</h2>
@@ -14,6 +14,7 @@ export const BookShelf = ({key,shelfTitle,allBooks}) => {
               <Book 
                key={book.id}
                book ={book}
+               updateBookShelfStatus ={updateBookShelfStatus}
                />
               ))};
         </ol>
