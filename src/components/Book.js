@@ -17,7 +17,7 @@ export const Book = ({ book ,updateBookShelfStatus}) => {
          updateBookShelfStatus ={updateBookShelfStatus}
          /> */}
         </div>
-        {/* <div className="book-title">{book.title}</div> */}
+        {<div className="book-title">{book.title}</div> }
         <div className="book-title">{book.authors}</div>
       </div>
     </li>
