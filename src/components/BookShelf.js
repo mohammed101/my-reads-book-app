@@ -3,7 +3,7 @@ import { Book } from './Book';
 export const BookShelf = ({key,shelfTitle,allBooks}) => {
     return (
       <div id={key} className="bookshelf">
-      <h2 className="bookshelf-title">{shelfTitle}</h2>
+      <h2 className="bookshelf-title ">{shelfTitle}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
           {

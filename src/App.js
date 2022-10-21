@@ -31,6 +31,7 @@ import './App.css';
             export default  function App() {
 
               const [allBooks, setAllBooks] = useState([]);
+              const [bookShelfedUpdated, setBookShelfedUpdated] = useState();
 
 
               useEffect(() => {
@@ -43,7 +44,23 @@ import './App.css';
                 getBooks();
               }, []);
 
+              useEffect( () => {
+                if(bookShelfedUpdated){
 
+                  bookAPI.update(bookShelfedUpdated,bookShelfedUpdated.shelf )
+                }
+             },[bookShelfedUpdated])
+
+        const updateBookShelfStatus = (book,updatedStatusOfBook) => {
+
+          const booknow = {
+            ...book,
+            shelf:updateBookShelfStatus
+          }
+          setBookShelfedUpdated(booknow);
+          const newAllBooks = allBooks.filter(book => book.id != booknow.id);
+          setAllBooks([...newAllBooks,booknow]);
+        }
 
               return (
     <div className="App">

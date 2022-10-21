@@ -1,9 +1,7 @@
 import React from 'react';
 import { BookShelf } from './BookShelf';
-import {useState} from 'react';
 
-
-const bookShelfsTypes = ['currentlyReading;','wantToRead','read'];
+const bookShelfsTypes = ['currentlyReading','wantToRead','read'];
 // const bookShelfsTypes = [
 //   { key: 'currentlyReading', name: 'Currently Reading' },
 //   { key: 'wantToRead', name: 'Want to Read' },
@@ -17,10 +15,11 @@ export const BookList = ({allBooks}) => {
     <div className='list-books-content'>
       <div>
       {
-        bookShelfsTypes.map((shlef,index) => 
+        bookShelfsTypes.map((shelf) => 
         (
         <BookShelf
-          shelfTitle ={shlef}
+         key={shelf}
+          shelfTitle ={shelf}
           allBooks = {allBooks}
         />
         ))}
