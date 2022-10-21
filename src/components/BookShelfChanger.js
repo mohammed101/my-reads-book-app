@@ -9,7 +9,7 @@ export const BookShelfChanger = ({ book,updateBookShelfStatus }) => {
   useEffect( () => {
      // eslint-disable-next-line eqeqeq
      if(changeBookShelf != '');
-     updateBookShelfStatus(book,changeBookShelf)
+    //  updateBookShelfStatus(book,changeBookShelf)
   },[changeBookShelf])
 
   const onSelectShlefChangeHandler = (updatedStatusOfBook) => {

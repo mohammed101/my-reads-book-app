@@ -2,25 +2,25 @@ import React from 'react';
 import { BookShelf } from './BookShelf';
 import {Link} from 'react-router-dom';
 
-const bookShelfsTypes = ['currentlyReading','wantToRead','read'];
-// const bookShelfsTypes = [
-//   { key: 'currentlyReading', name: 'Currently Reading' },
-//   { key: 'wantToRead', name: 'Want to Read' },
-//   { key: 'read', name: 'Have Read' },
-// ];
+//const bookShelfsTypes = ['currentlyReading','wantToRead','read'];
+const bookShelfsTypes = [
+  { key: 'currentlyReading', name: 'Currently Reading' },
+  { key: 'wantToRead', name: 'Want to Read' },
+  { key: 'read', name: 'Have Read' },
+];
 export const BookList = ({allBooks,updateBookShelfStatus}) => {
   return (
     <div className='list-books'>
       <div className='list-books-title'>
       <h1>MyReads</h1>
-    <div className='list-books-content'>
+    </div>
+       <div className='list-books-content'>
       <div>
       {
         bookShelfsTypes.map((shelf) => 
         (
         <BookShelf
-         key={shelf}
-          shelfTitle ={shelf}
+          shelfOfBook ={shelf}
           allBooks = {allBooks}
           updateBookShelfStatus ={updateBookShelfStatus}
         />
@@ -30,7 +30,6 @@ export const BookList = ({allBooks,updateBookShelfStatus}) => {
               Add New Book
            </Link>
           </div>
-    </div>
     </div>
     </div>
     </div>
