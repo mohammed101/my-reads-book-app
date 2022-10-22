@@ -1,6 +1,6 @@
 import React from 'react';
 import { BookShelfChanger } from './BookShelfChanger';
-export const Book = ({ book ,updateBookShelfStatus}) => {
+export const Book = ({ book ,updateBookShelfStatus,getBooks}) => {
   return (
     <li>
       <div className="book">
@@ -12,10 +12,11 @@ export const Book = ({ book ,updateBookShelfStatus}) => {
             backgroundImage:`url(${book?.imageLinks?.thumbnail})`
          }}      
          />
-         {/* <BookShelfChanger 
+         <BookShelfChanger 
          book={book}
          updateBookShelfStatus ={updateBookShelfStatus}
-         /> */}
+         getBooks ={getBooks}
+         />
         </div>
         {<div className="book-title">{book.title}</div> }
         <div className="book-title">{book.authors}</div>

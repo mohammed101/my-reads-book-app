@@ -1,9 +1,6 @@
 import React from 'react';
 import { Book } from './Book';
-export const BookShelf = ({shelfOfBook,allBooks,updateBookShelfStatus}) => {
-  console.log(shelfOfBook);
-  // console.log(shelfTitle);
-  <h2>{shelfOfBook}</h2>
+export const BookShelf = ({shelfOfBook,allBooks,updateBookShelfStatus,getBooks}) => {
     return (
       <div id={shelfOfBook.key} className="bookshelf">
       <h2 className="bookshelf-title ">{shelfOfBook.name}</h2>
@@ -18,6 +15,7 @@ export const BookShelf = ({shelfOfBook,allBooks,updateBookShelfStatus}) => {
                 bookKey={book.id}
                book ={book}
                updateBookShelfStatus ={updateBookShelfStatus}
+               getBooks ={getBooks}     
                />
               ))};
         </ol>
