@@ -1,7 +1,6 @@
 import React from 'react';
 import { BookShelf } from './BookShelf';
-import {Link} from 'react-router-dom';
-
+import { GoSearchPage } from './GoSearchPage';
 const bookShelfsTypes = [
   { key: 'currentlyReading', name: 'Currently Reading' },
   { key: 'wantToRead', name: 'Want to Read' },
@@ -26,15 +25,10 @@ export const BookList = ({allBooks,updateBookShelfStatus,getBooks}) => {
           getBooks ={getBooks}     
         />
         ))}
-          <div className="open-search">
-  <Link to="/search">
-              Add New Book
-  </Link>
-          </div>
     </div>
-    </div>
-    </div>
-
+  </div>
+  <GoSearchPage/>
+  </div>
     
   );
 }
