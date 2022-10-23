@@ -7,25 +7,25 @@ const bookShelfsTypes = [
   { key: 'read', name: 'Have Read' },
 ];
 export const BookList = ({allBooks,updateBookShelfStatus,getBooks}) => {
-  //console.log('i am in booklist',updateBookShelfStatus); 
+  // console.log('i am in booklist',updateBookShelfStatus); 
+  // console.log('in booklist component  ',getBooks)
   return (
   <div className='list-books'>
       <div className='list-books-title'>
       <h1>MyReads</h1>
   </div>
   <div className='list-books-content'>
-      <div>
       {
         bookShelfsTypes.map((shelf) => 
         (
         <BookShelf
           shelfOfBook ={shelf}
+          key ={shelf.key}
           allBooks = {allBooks}
           updateBookShelfStatus ={updateBookShelfStatus}
           getBooks ={getBooks}     
         />
         ))}
-    </div>
   </div>
   <GoSearchPage/>
   </div>

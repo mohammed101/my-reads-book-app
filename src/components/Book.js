@@ -1,8 +1,9 @@
 import React from 'react';
 import { BookShelfChanger } from './BookShelfChanger';
-export const Book = ({ book ,updateBookShelfStatus,getBooks}) => {
+export const Book = ({bookKey, book ,updateBookShelfStatus,getBooks}) => {
+  //console.log('in book component ',getBooks)
   return (
-    <li>
+    <li id={bookKey}>
       <div className="book">
         <div className="book-top">
          <div className='book-cover'

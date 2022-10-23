@@ -6,7 +6,6 @@ import {useState,useEffect} from 'react';
 import * as bookAPI from './BooksAPI';
 import './App.css';  
 export default  function App() {
-
 const [allBooks, setAllBooks] = useState([]);
 const [bookShelfedUpdated, setBookShelfedUpdated] = useState();
 
@@ -17,6 +16,7 @@ setAllBooks(res);
 };
 
 useEffect(() => {
+  debugger;
 getBooks();
 }, []);
 
@@ -41,7 +41,7 @@ return (
 <div className="App">
 <Router>
   <Routes>
-  <Route exact path='/' element={< BookList allBooks ={allBooks} updateBookShelfStatus ={updateBookShelfStatus}/>}></Route>
+  <Route exact path='/' element={< BookList allBooks ={allBooks} updateBookShelfStatus ={updateBookShelfStatus} getBooks = {getBooks} />}></Route>
   <Route exact path='/search' element={< BookSearch updateBookShelfStatus ={updateBookShelfStatus} getBooks = {getBooks} />}></Route>
   {/* <Route path='*'element ={<NotFound404/>} ></Route>	   */}
   </Routes>
