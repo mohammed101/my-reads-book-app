@@ -1,19 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import * as bookAPI from '../BooksAPI';
 import { Book } from './Book';
 
-export const BookSearch = ({updateBookShelfStatus,getBooks}) => {
-
-// getAllBookSFromSearch();
-//   }, [searchValueFromInput]);
-
+export const BookSearch = ({allBooks,updateBookShelfStatus}) => {
       const [searchItems , setSearchItems] = useState([])
+      const [queryError , setQueryError] = useState(''); 
 
   const onChangeSearchInputHandler = async(searchValue)=>
   {
-       const res = await bookAPI.search(searchValue);
-       setSearchItems(res);
+    if (searchValue.trim() !=='')
+    {
+      
+      await bookAPI.search(searchValue).then(async data => {
+        if(data.error)
+        {
+          setQueryError('');
+          setSearchItems([]);
+        }else
+        {
+          setQueryError('');
+          setSearchItems(data);
+        }
+      });
+     
+    }else if (searchValue.trim() === ''){
+      setQueryError('please write a valid search item');
+   setSearchItems([]);
+    }
   }
   return (
 <div className="search-books">
@@ -28,25 +42,34 @@ export const BookSearch = ({updateBookShelfStatus,getBooks}) => {
       onChange={ e => onChangeSearchInputHandler(e.target.value)}
     />
   </div>
-  {/* <h1> {searchValueFromInput}</h1> */}
 </div>
 <div className="search-books-results">
   <ol className="books-grid">
-  {
-   searchItems.map(book=>(
-    <Book 
-     key={book.id}
-     book ={book}
+  {searchItems.length > 0 ?
+   searchItems.map(book=>{
+
+    const isFoundInHomePageBooks = allBooks.find(b => b.id === book.id);
+    if(isFoundInHomePageBooks)
+    {
+      book.shelf = isFoundInHomePageBooks.shelf;
+    }
+    else
+    {
+      book.shelf ="none";
+    }
+    return <Book 
+    key={book.id}
+    book ={book}
      updateBookShelfStatus ={updateBookShelfStatus}
-     getBooks ={getBooks}
-     
      />
-    ))};
+   }):
+   <h1 style={{marginTop:"80px"}}> {queryError}</h1> 
+   };
     </ol>
     <Link
-                    to='/'
-                    className="return-home">
-                  </Link>
+    to='/'
+    className="return-home">
+  </Link>
 </div>
 </div>
   );
