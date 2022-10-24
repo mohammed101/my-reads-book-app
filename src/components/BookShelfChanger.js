@@ -1,20 +1,18 @@
 import React from 'react';
 import {useState,useEffect} from 'react';
 
-export const BookShelfChanger = ({ book,updateBookShelfStatus, getBooks}) => {
-  // console.log('i am in book shelf changer now toooo',updateBookShelfStatus);
-
+export const BookShelfChanger = ({ book,updateBookShelfStatus}) => {
   const [changeBookShelf, setChangeBookShelf] = useState('');
 
   useEffect( () => {
      // eslint-disable-next-line eqeqeq
-     if(changeBookShelf != '');
-     updateBookShelfStatus(book,changeBookShelf);
-  },[changeBookShelf])
+     if(changeBookShelf != ''){
+      updateBookShelfStatus(book,changeBookShelf);
+     }
+  },[book, changeBookShelf, updateBookShelfStatus])
 
   const onSelectShlefChangeHandler = (updatedStatusOfBook) => {
     setChangeBookShelf(updatedStatusOfBook);
-    getBooks();
   }
     return (
       <div className="book-shelf-changer">
