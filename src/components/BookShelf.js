@@ -1,8 +1,8 @@
 import React from 'react';
 import { Book } from './Book';
-export const BookShelf = ({shelfOfBook,allBooks,updateBookShelfStatus,getBooks}) => {
+export const BookShelf = ({shelfKey,shelfOfBook,allBooks,updateBookShelfStatus}) => {
     return (
-      <div id={shelfOfBook.key} className="bookshelf">
+      <div id={shelfKey} className="bookshelf">
       <h2 className="bookshelf-title ">{shelfOfBook.name}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
@@ -12,10 +12,9 @@ export const BookShelf = ({shelfOfBook,allBooks,updateBookShelfStatus,getBooks})
            .map( book=> 
               (
               <Book 
-                bookKey={book.id}
+                key={book.id}
                book ={book}
                updateBookShelfStatus ={updateBookShelfStatus}
-               getBooks ={getBooks}     
                />
               ))};
         </ol>

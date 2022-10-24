@@ -1,3 +1,7 @@
+# MyReads React App
+
+The My Reads App allows you to track books and place them on one of three bookshelves.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
