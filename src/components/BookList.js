@@ -6,9 +6,7 @@ const bookShelfsTypes = [
   { key: 'wantToRead', name: 'Want to Read' },
   { key: 'read', name: 'Have Read' },
 ];
-export const BookList = ({allBooks,updateBookShelfStatus,getBooks}) => {
-  // console.log('i am in booklist',updateBookShelfStatus); 
-  // console.log('in booklist component  ',getBooks)
+export const BookList = ({allBooks,updateBookShelfStatus}) => {
   return (
   <div className='list-books'>
       <div className='list-books-title'>
@@ -23,7 +21,6 @@ export const BookList = ({allBooks,updateBookShelfStatus,getBooks}) => {
           key ={shelf.key}
           allBooks = {allBooks}
           updateBookShelfStatus ={updateBookShelfStatus}
-          getBooks ={getBooks}     
         />
         ))}
   </div>

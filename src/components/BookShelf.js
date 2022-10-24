@@ -1,8 +1,6 @@
 import React from 'react';
 import { Book } from './Book';
-export const BookShelf = ({shelfKey,shelfOfBook,allBooks,updateBookShelfStatus,getBooks}) => {
-  //console.log('in shelf  component ',getBooks)shelfKey
-  //console.log('in shelf   key is  ',shelfKey)
+export const BookShelf = ({shelfKey,shelfOfBook,allBooks,updateBookShelfStatus}) => {
     return (
       <div id={shelfKey} className="bookshelf">
       <h2 className="bookshelf-title ">{shelfOfBook.name}</h2>
@@ -17,7 +15,6 @@ export const BookShelf = ({shelfKey,shelfOfBook,allBooks,updateBookShelfStatus,g
                 key={book.id}
                book ={book}
                updateBookShelfStatus ={updateBookShelfStatus}
-               getBooks ={getBooks}     
                />
               ))};
         </ol>
